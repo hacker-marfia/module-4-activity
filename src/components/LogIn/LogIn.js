@@ -40,9 +40,8 @@ export default class LogIn extends React.Component {
               password: password 
             }
 
-            let comparisons = fakeDB.map(item =>  JSON.stringify(item) === JSON.stringify(userObj))
-            comparisons = comparisons.filter(item => item !== false)
-            const isAuthenticated = comparisons.length > 0
+            const comparisons = fakeDB.map(item =>  JSON.stringify(item) === JSON.stringify(userObj))
+            const isAuthenticated = comparisons.includes(true)
 
             // Some weird stuff is happening here.
             // You may not need to understand it.
